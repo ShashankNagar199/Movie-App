@@ -21,7 +21,7 @@ const MoviesDisplayAndSearch = () => {
     await dispatch(searchMoviesByTitle(title));
     setLoading(false);
   };
-  if (movies.length == 0 && title == "") {
+  if (movies.length == 0 && title === "") {
     dispatch(suggestDefaultMovies());
   }
   return (
@@ -68,7 +68,7 @@ const MoviesDisplayAndSearch = () => {
           {isLoading ? "Searching..." : "Search"}
         </button>
       </div>
-      {movies.length == 0 && title == "" && <h1>Suggested Movies</h1>}
+      {movies.length == 0 && title === "" && <h1>Suggested Movies</h1>}
       <div className={movies.length > 0 ? "movies-grid" : ""}>
         {movies.length > 0 ? (
           movies.map((movie) => <MovieModal key={movie.imdbID} movie={movie} />)
