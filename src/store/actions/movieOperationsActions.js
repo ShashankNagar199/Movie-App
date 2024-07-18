@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_KEY = "7c272cb2";
-const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const getMoviesFromLocalStorage = () => {
   const user = JSON.parse(localStorage.getItem("user"));
